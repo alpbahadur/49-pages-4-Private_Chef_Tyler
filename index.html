@@ -3,9 +3,1108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
+    <title>Private Chef Tyler | Luxury Private Chef Services in Puerto Rico</title>
+    <meta name="description" content="The best private chef in Puerto Rico! Hire Chef Tyler for exceptional private dining experiences in San Juan, Dorado, Condado, Guaynabo, and Old San Juan.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: #FAFAF9;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Animated gradient background */
+        .gradient-bg {
+            background: linear-gradient(135deg, #D4A574 0%, #E8C39E 50%, #F5E6D3 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Smooth fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Image hover effects */
+        .image-hover {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-hover img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .image-hover:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Navbar scroll effect */
+        nav {
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        /* Button styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #8B6B47 0%, #D4A574 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(139, 107, 71, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(139, 107, 71, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #8B6B47;
+            padding: 1rem 2rem;
+            border: 2px solid #8B6B47;
+            border-radius: 9999px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #8B6B47;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Section divider */
+        .section-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #8B6B47, #D4A574);
+            margin: 1.5rem auto;
+        }
+
+        /* Gallery grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Service cards */
+        .service-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Hero overlay */
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(139, 107, 71, 0.3) 100%);
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Menu category tabs */
+        .menu-tab {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+            color: #6B5D48;
+            border: 2px solid transparent;
+        }
+
+        .menu-tab:hover {
+            border-color: #D4A574;
+        }
+
+        .menu-tab.active {
+            background: linear-gradient(135deg, #8B6B47 0%, #D4A574 100%);
+            color: white;
+        }
+
+        /* Image loading effect */
+        img {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        img.loaded {
+            opacity: 1;
+        }
+
+        /* Text highlight */
+        .text-highlight {
+            color: #8B6B47;
+            font-weight: 600;
+        }
+
+        /* Contact form styles */
+        input, textarea, select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #E5E5E5;
+            border-radius: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #D4A574;
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+        }
+
+        /* Testimonial card */
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 0;
+            left: 1.5rem;
+            font-size: 6rem;
+            color: #F5E6D3;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+    </style>
 </head>
 <body>
-    <!-- Content will be added here -->
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo/Brand -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-2xl md:text-3xl font-bold" style="font-family: 'Playfair Display', serif; color: #8B6B47; letter-spacing: 1px;">
+                        Chef Tyler
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-sm font-medium text-gray-700 hover:text-[#8B6B47] transition-colors uppercase tracking-wider">Home</a>
+                    <a href="#story" class="text-sm font-medium text-gray-700 hover:text-[#8B6B47] transition-colors uppercase tracking-wider">My Story</a>
+                    <a href="#services" class="text-sm font-medium text-gray-700 hover:text-[#8B6B47] transition-colors uppercase tracking-wider">Services</a>
+                    <a href="#menu" class="text-sm font-medium text-gray-700 hover:text-[#8B6B47] transition-colors uppercase tracking-wider">Menu</a>
+                    <a href="#gallery" class="text-sm font-medium text-gray-700 hover:text-[#8B6B47] transition-colors uppercase tracking-wider">Gallery</a>
+                    <a href="#contact" class="btn-primary">Book Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-900 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50">
+            <div class="p-6">
+                <button id="close-menu-btn" class="text-gray-900 float-right focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <div class="clear-both mt-12 space-y-6">
+                    <a href="#home" class="block text-sm uppercase tracking-wider text-gray-700 hover:text-[#8B6B47]">Home</a>
+                    <a href="#story" class="block text-sm uppercase tracking-wider text-gray-700 hover:text-[#8B6B47]">My Story</a>
+                    <a href="#services" class="block text-sm uppercase tracking-wider text-gray-700 hover:text-[#8B6B47]">Services</a>
+                    <a href="#menu" class="block text-sm uppercase tracking-wider text-gray-700 hover:text-[#8B6B47]">Menu</a>
+                    <a href="#gallery" class="block text-sm uppercase tracking-wider text-gray-700 hover:text-[#8B6B47]">Gallery</a>
+                    <a href="#contact" class="block btn-primary text-center mt-8">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="./assets/image_0.webp" alt="Chef Tyler Private Chef Services" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto pt-20">
+            <div class="fade-in visible">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight">
+                    Private Chef Tyler
+                </h1>
+                <p class="text-xl md:text-2xl text-white mb-4 font-light">
+                    Luxury Private Dining Experience
+                </p>
+                <p class="text-base md:text-lg text-white mb-12 font-light max-w-2xl mx-auto opacity-90">
+                    Exceptional culinary artistry in the comfort of your home across Puerto Rico
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#contact" class="btn-primary">Book Your Experience</a>
+                    <a href="#menu" class="btn-secondary border-white text-white hover:bg-white hover:text-[#8B6B47]">View Sample Menus</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-20 md:py-32 bg-white relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                        Your Personal Culinary Artist
+                    </h2>
+                    <div class="section-divider mx-0"></div>
+                    <p class="text-lg leading-relaxed mb-6 text-gray-600">
+                        I would love to be your <span class="text-highlight">private chef</span>! Whether you're hosting an intimate dinner party, celebrating a special occasion, or seeking a unique culinary experience, I bring restaurant-quality cuisine directly to your home.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-8 text-gray-600">
+                        With years of experience crafting unforgettable dining experiences throughout <span class="text-highlight">San Juan, Dorado, Condado, Guaynabo, and Old San Juan</span>, I specialize in creating personalized menus that reflect your tastes and preferences.
+                    </p>
+                    <a href="#story" class="btn-secondary">Learn More About Me</a>
+                </div>
+                <div class="fade-in image-hover rounded-lg overflow-hidden shadow-2xl">
+                    <img src="./assets/image_1.webp" alt="Chef Tyler Preparing Gourmet Cuisine" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-32 gradient-bg relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">
+                    Private Chef Services
+                </h2>
+                <div class="section-divider"></div>
+                <p class="text-lg max-w-3xl mx-auto text-white">
+                    Tailored culinary experiences for every occasion
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card fade-in">
+                    <div class="text-5xl mb-4">🍽️</div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900">
+                        Intimate Dinners
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        From romantic date nights to family gatherings, enjoy a multi-course dining experience crafted exclusively for you and your guests.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#8B6B47] mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Customized menus</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#8B6B47] mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Premium ingredients</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#8B6B47] mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Full service included</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card fade-in">
+                    <div class="text-5xl mb-4">🎉</div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900">
+                        Private Gatherings
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Make your celebrations unforgettable with exquisite cuisine designed for parties, birthdays, anniversaries, and corporate events.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#8B6B47] mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Events up to 50 guests</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#8B6B47] mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Buffet or plated service</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#8B6B47] mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Dietary accommodations</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card fade-in">
+                    <div class="text-5xl mb-4">👨‍🍳</div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900">
+                        Meal Prep Services
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Enjoy restaurant-quality meals throughout the week with customized meal preparation tailored to your dietary needs and preferences.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#8B6B47] mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Weekly meal plans</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#8B6B47] mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Nutrition-focused</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#8B6B47] mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Convenient storage</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Story Section -->
+    <section id="story" class="py-20 md:py-32 bg-white relative">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                    My Culinary Journey
+                </h2>
+                <div class="section-divider"></div>
+                <p class="text-lg max-w-3xl mx-auto text-gray-600">
+                    From passion to profession - a story of dedication to the culinary arts
+                </p>
+            </div>
+
+            <!-- Story Content -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="fade-in image-hover rounded-lg overflow-hidden shadow-2xl order-2 md:order-1">
+                    <img src="./assets/image_2.webp" alt="Chef Tyler Story" class="w-full h-auto">
+                </div>
+                <div class="fade-in order-1 md:order-2">
+                    <h3 class="text-3xl font-bold mb-6 text-gray-900">
+                        A Passion for Excellence
+                    </h3>
+                    <p class="text-lg leading-relaxed mb-6 text-gray-600">
+                        My culinary journey began with a simple belief: food has the power to bring people together and create lasting memories. This philosophy drives everything I do as a private chef.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-6 text-gray-600">
+                        After training in some of the finest kitchens and honing my skills across diverse cuisines, I discovered my true calling in private chef services. The ability to create intimate, personalized dining experiences allows me to connect with guests on a deeper level.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-600">
+                        Today, I'm proud to serve clients throughout Puerto Rico, bringing world-class cuisine to their homes and making every meal an extraordinary event.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Values -->
+            <div class="grid md:grid-cols-3 gap-8 fade-in">
+                <div class="text-center p-6">
+                    <div class="text-5xl mb-4">🌟</div>
+                    <h4 class="text-xl font-bold mb-3 text-gray-900">Quality</h4>
+                    <p class="text-gray-600">
+                        Only the finest, freshest ingredients make it to your table
+                    </p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-5xl mb-4">❤️</div>
+                    <h4 class="text-xl font-bold mb-3 text-gray-900">Passion</h4>
+                    <p class="text-gray-600">
+                        Every dish is crafted with love and attention to detail
+                    </p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-5xl mb-4">🎨</div>
+                    <h4 class="text-xl font-bold mb-3 text-gray-900">Creativity</h4>
+                    <p class="text-gray-600">
+                        Innovative presentations that delight all your senses
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 md:py-32 bg-gray-50 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                    Sample Menu Selections
+                </h2>
+                <div class="section-divider"></div>
+                <p class="text-lg max-w-3xl mx-auto text-gray-600">
+                    A glimpse into the culinary experiences I create. All menus are fully customizable to your preferences.
+                </p>
+            </div>
+
+            <!-- Menu Categories -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 fade-in">
+                <button class="menu-tab active" data-category="appetizers">Appetizers</button>
+                <button class="menu-tab" data-category="entrees">Main Courses</button>
+                <button class="menu-tab" data-category="desserts">Desserts</button>
+                <button class="menu-tab" data-category="specials">Chef's Specials</button>
+            </div>
+
+            <!-- Appetizers -->
+            <div id="appetizers" class="menu-category grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_3.webp" alt="Gourmet Appetizer" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Seared Scallops</h4>
+                    <p class="text-gray-600">
+                        Pan-seared scallops with cauliflower purée, crispy pancetta, and micro greens
+                    </p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_4.webp" alt="Fresh Appetizer" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Tuna Tartare</h4>
+                    <p class="text-gray-600">
+                        Fresh ahi tuna with avocado, sesame, and citrus soy dressing
+                    </p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_5.webp" alt="Elegant Starter" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Burrata & Tomatoes</h4>
+                    <p class="text-gray-600">
+                        Creamy burrata with heirloom tomatoes, basil oil, and aged balsamic
+                    </p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_6.webp" alt="Seafood Starter" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Lobster Bisque</h4>
+                    <p class="text-gray-600">
+                        Rich and creamy lobster bisque with cognac and fresh herbs
+                    </p>
+                </div>
+            </div>
+
+            <!-- Entrees -->
+            <div id="entrees" class="menu-category hidden grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_7.webp" alt="Main Course" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Filet Mignon</h4>
+                    <p class="text-gray-600">
+                        Premium beef tenderloin with truffle mashed potatoes and red wine reduction
+                    </p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_8.webp" alt="Seafood Entree" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Pan-Seared Salmon</h4>
+                    <p class="text-gray-600">
+                        Wild-caught salmon with lemon butter, asparagus, and herb risotto
+                    </p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_9.webp" alt="Poultry Dish" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Duck Breast</h4>
+                    <p class="text-gray-600">
+                        Roasted duck breast with orange gastrique, sweet potato, and seasonal vegetables
+                    </p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_10.webp" alt="Pasta Dish" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Lobster Ravioli</h4>
+                    <p class="text-gray-600">
+                        Handmade ravioli filled with lobster in a champagne cream sauce
+                    </p>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div id="desserts" class="menu-category hidden grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_11.webp" alt="Dessert" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Chocolate Lava Cake</h4>
+                    <p class="text-gray-600">
+                        Warm chocolate cake with a molten center, vanilla ice cream, and berry compote
+                    </p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_12.webp" alt="Sweet Treat" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Crème Brûlée</h4>
+                    <p class="text-gray-600">
+                        Classic vanilla bean custard with caramelized sugar and fresh berries
+                    </p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_13.webp" alt="Elegant Dessert" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Tiramisu</h4>
+                    <p class="text-gray-600">
+                        Traditional Italian tiramisu with espresso-soaked ladyfingers and mascarpone
+                    </p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_14.webp" alt="Fruit Dessert" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Panna Cotta</h4>
+                    <p class="text-gray-600">
+                        Silky panna cotta with passion fruit coulis and tropical fruit
+                    </p>
+                </div>
+            </div>
+
+            <!-- Chef's Specials -->
+            <div id="specials" class="menu-category hidden grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_15.webp" alt="Chef's Special" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Wagyu Beef Experience</h4>
+                    <p class="text-gray-600">
+                        Premium Wagyu beef prepared to perfection with seasonal accompaniments
+                    </p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_16.webp" alt="Signature Dish" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Tasting Menu</h4>
+                    <p class="text-gray-600">
+                        Five-course culinary journey showcasing the best of seasonal ingredients
+                    </p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_17.webp" alt="Exclusive Dish" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Seafood Extravaganza</h4>
+                    <p class="text-gray-600">
+                        Fresh catch of the day with lobster, scallops, and premium shellfish
+                    </p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="mb-4 image-hover rounded-lg overflow-hidden">
+                        <img src="./assets/image_18.webp" alt="Special Creation" class="w-full h-64 object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">Plant-Based Elegance</h4>
+                    <p class="text-gray-600">
+                        Sophisticated vegetarian tasting menu celebrating local produce
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 fade-in">
+                <p class="text-gray-600 mb-6 italic">
+                    All menus are customizable. Dietary restrictions and allergies are always accommodated.
+                </p>
+                <a href="#contact" class="btn-primary">Request Custom Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 md:py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                    Culinary Artistry
+                </h2>
+                <div class="section-divider"></div>
+                <p class="text-lg max-w-3xl mx-auto text-gray-600">
+                    A visual journey through some of my favorite creations and dining experiences
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="fade-in image-hover rounded-lg overflow-hidden shadow-lg h-80">
+                    <img src="./assets/image_19.webp" alt="Private Chef Gallery" class="w-full h-full object-cover">
+                </div>
+                <div class="fade-in image-hover rounded-lg overflow-hidden shadow-lg h-80">
+                    <img src="./assets/image_20.webp" alt="Gourmet Dish" class="w-full h-full object-cover">
+                </div>
+                <div class="fade-in image-hover rounded-lg overflow-hidden shadow-lg h-80">
+                    <img src="./assets/image_21.webp" alt="Fine Dining" class="w-full h-full object-cover">
+                </div>
+                <div class="fade-in image-hover rounded-lg overflow-hidden shadow-lg h-80">
+                    <img src="./assets/image_22.webp" alt="Culinary Creation" class="w-full h-full object-cover">
+                </div>
+                <div class="fade-in image-hover rounded-lg overflow-hidden shadow-lg h-80">
+                    <img src="./assets/image_23.webp" alt="Chef at Work" class="w-full h-full object-cover">
+                </div>
+                <div class="fade-in image-hover rounded-lg overflow-hidden shadow-lg h-80">
+                    <img src="./assets/image_24.webp" alt="Elegant Plating" class="w-full h-full object-cover">
+                </div>
+                <div class="fade-in image-hover rounded-lg overflow-hidden shadow-lg h-80">
+                    <img src="./assets/image_25.webp" alt="Private Event" class="w-full h-full object-cover">
+                </div>
+                <div class="fade-in image-hover rounded-lg overflow-hidden shadow-lg h-80">
+                    <img src="./assets/image_26.webp" alt="Food Photography" class="w-full h-full object-cover">
+                </div>
+                <div class="fade-in image-hover rounded-lg overflow-hidden shadow-lg h-80">
+                    <img src="./assets/image_27.webp" alt="Dining Experience" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 md:py-32 gradient-bg relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">
+                    What Clients Say
+                </h2>
+                <div class="section-divider"></div>
+                <p class="text-lg max-w-3xl mx-auto text-white">
+                    Don't just take my word for it - hear from those who have experienced the magic
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card fade-in">
+                    <div class="relative z-10">
+                        <p class="text-gray-600 mb-4 italic">
+                            "Chef Tyler transformed our anniversary dinner into an unforgettable experience. Every course was a masterpiece!"
+                        </p>
+                        <p class="font-bold text-gray-900">— Sarah & Michael</p>
+                        <p class="text-sm text-gray-500">Dorado, PR</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="relative z-10">
+                        <p class="text-gray-600 mb-4 italic">
+                            "The best private chef in Puerto Rico! Professional, creative, and the food was absolutely incredible."
+                        </p>
+                        <p class="font-bold text-gray-900">— Jennifer Rodriguez</p>
+                        <p class="text-sm text-gray-500">San Juan, PR</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="relative z-10">
+                        <p class="text-gray-600 mb-4 italic">
+                            "Chef Tyler catered our corporate event and exceeded all expectations. Highly recommended!"
+                        </p>
+                        <p class="font-bold text-gray-900">— David Thompson</p>
+                        <p class="text-sm text-gray-500">Condado, PR</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Booking Section -->
+    <section id="contact" class="py-20 md:py-32 bg-white relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                    Book Your Experience
+                </h2>
+                <div class="section-divider"></div>
+                <p class="text-lg max-w-3xl mx-auto text-gray-600">
+                    Let's create an unforgettable culinary experience together
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 mb-12">
+                <!-- Contact Information -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-900">Get in Touch</h3>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold mb-2 text-gray-900">Service Areas</h4>
+                            <p class="text-gray-600">
+                                San Juan • Dorado • Condado<br>
+                                Guaynabo • Old San Juan<br>
+                                & surrounding Puerto Rico areas
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold mb-2 text-gray-900">Availability</h4>
+                            <p class="text-gray-600">
+                                Available for private dinners, events, and meal prep services.<br>
+                                Book at least 2 weeks in advance for best availability.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold mb-2 text-gray-900">Minimum Requirements</h4>
+                            <p class="text-gray-600">
+                                Minimum 2 guests for intimate dinners<br>
+                                No maximum for private events
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+                        <p class="text-gray-600 italic">
+                            "I'm passionate about creating memorable dining experiences. Let's discuss your vision and make it a reality!"
+                        </p>
+                        <p class="font-bold text-gray-900 mt-3">— Chef Tyler</p>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="fade-in">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
+                            <input type="text" id="name" name="name" required class="w-full">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" required class="w-full">
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full">
+                        </div>
+
+                        <div>
+                            <label for="location" class="block text-sm font-medium text-gray-700 mb-2">Event Location *</label>
+                            <select id="location" name="location" required class="w-full">
+                                <option value="">Select location</option>
+                                <option value="san-juan">San Juan</option>
+                                <option value="dorado">Dorado</option>
+                                <option value="condado">Condado</option>
+                                <option value="guaynabo">Guaynabo</option>
+                                <option value="old-san-juan">Old San Juan</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="date" class="block text-sm font-medium text-gray-700 mb-2">Preferred Date *</label>
+                                <input type="date" id="date" name="date" required class="w-full">
+                            </div>
+                            <div>
+                                <label for="guests" class="block text-sm font-medium text-gray-700 mb-2">Number of Guests *</label>
+                                <input type="number" id="guests" name="guests" min="2" required class="w-full">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Type *</label>
+                            <select id="service" name="service" required class="w-full">
+                                <option value="">Select service</option>
+                                <option value="intimate-dinner">Intimate Dinner</option>
+                                <option value="private-gathering">Private Gathering/Event</option>
+                                <option value="meal-prep">Meal Prep Service</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Tell me about your event</label>
+                            <textarea id="message" name="message" rows="4" class="w-full" placeholder="Dietary restrictions, preferences, special occasions, etc."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary w-full">
+                            Send Booking Request
+                        </button>
+
+                        <p class="text-sm text-gray-500 text-center">
+                            I'll respond within 24 hours to discuss your event
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4" style="font-family: 'Playfair Display', serif;">Chef Tyler</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Bringing world-class culinary experiences to your home throughout Puerto Rico.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-[#D4A574] transition-colors">Home</a></li>
+                        <li><a href="#story" class="hover:text-[#D4A574] transition-colors">My Story</a></li>
+                        <li><a href="#services" class="hover:text-[#D4A574] transition-colors">Services</a></li>
+                        <li><a href="#menu" class="hover:text-[#D4A574] transition-colors">Menu</a></li>
+                        <li><a href="#gallery" class="hover:text-[#D4A574] transition-colors">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-[#D4A574] transition-colors">Book Now</a></li>
+                    </ul>
+                </div>
+
+                <!-- Service Areas -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Service Areas</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>San Juan, PR</li>
+                        <li>Dorado, PR</li>
+                        <li>Condado, PR</li>
+                        <li>Guaynabo, PR</li>
+                        <li>Old San Juan, PR</li>
+                        <li>& surrounding areas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-sm text-gray-400">
+                    © 2025 Private Chef Tyler. All rights reserved. | Luxury Private Chef Services in Puerto Rico
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for Fade-In Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Image Load Animation
+        window.addEventListener('load', () => {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (img.complete) {
+                    img.classList.add('loaded');
+                } else {
+                    img.addEventListener('load', () => {
+                        img.classList.add('loaded');
+                    });
+                }
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Menu Category Tabs
+        const menuTabs = document.querySelectorAll('.menu-tab');
+        const menuCategories = document.querySelectorAll('.menu-category');
+
+        menuTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.dataset.category;
+
+                // Update active tab
+                menuTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Show selected category
+                menuCategories.forEach(cat => {
+                    if (cat.id === category) {
+                        cat.classList.remove('hidden');
+                        cat.classList.add('grid');
+                    } else {
+                        cat.classList.add('hidden');
+                        cat.classList.remove('grid');
+                    }
+                });
+            });
+        });
+
+        // Form Submission (placeholder - replace with your backend)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your booking request! I will contact you within 24 hours to discuss your event.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
